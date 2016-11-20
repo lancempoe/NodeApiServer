@@ -8,8 +8,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const router = new express.Router();              // get an instance of the express Router
-const port = process.env.PORT || 8080;        // set our port
+const router = new express.Router(); // Getting instance of the express Router
+const port = process.env.PORT || 8080; // set the api port
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
