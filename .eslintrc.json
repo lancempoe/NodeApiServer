@@ -1,0 +1,14 @@
+{
+    "extends": "google",
+    "env": {
+        "browser": false,
+        "node": true,
+        "es6": true
+    },
+    "rules": { // http://eslint.org/docs/rules/
+        "max-len": [2, 120, 4], //120 chars long
+        "no-var": 2, // require let or const instead of var
+        "prefer-arrow-callback": 2,
+        "prefer-const": 2 // suggest using const declaration for variables that are never modified after declared
+    }
+}

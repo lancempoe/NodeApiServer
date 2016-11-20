@@ -1,7 +1,8 @@
 #Simple Node API Server
 
 Simple RESTful api that can handle CRUD for cats. 
-Returns JSON data and logs some some stuff to the console 
+Returns JSON data and logs some some stuff to the console. This project
+is using pre-commit and eslint to make sure I follow some standards.
 
 I have used the following:
 - node.js _6.9.1_
