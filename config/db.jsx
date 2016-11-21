@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const dbURI = 'mongodb://nodeuser:password@127.0.0.1:27017/NodeApiServer';
-require('../model/cats.jsx');
+require('../model/cat.jsx');
 
 module.exports = {
     connect() {
