@@ -1,11 +1,5 @@
 const Cat = require('../model/cat.jsx');
 
-function saveCat(cat, res, responseMessage) {
-    cat.save((err) => {
-        var response = {message: responseMessage};
-        respond(err, res, response);
-    });
-}
 function respond(err, res, response) {
     err ? res.send(err) : res.json(response);
 }
@@ -17,16 +11,19 @@ module.exports = {
         });
     },
 
-    postCat(req, res) {
-        var cat = new Cat();
-        cat.name = req.body.name;
-
-        saveCat(cat, res, 'Cat created!');
+    getCat(req, res) {
+        Cat.findById(req.params.cat_id, (err, cat) => {
+            respond(err, res, cat);
+        });
     },
 
-    getCat(req, res) {
-        Cat.findById(req.params.cat_id, function (err, cat) {
-            err ? res.send(err) : res.json(cat);
+    postCat(req, res) {
+        const cat = new Cat();
+        cat.name = req.body.name;
+
+        cat.save((err) => {
+            const response = {message: 'Cat created!'};
+            respond(err, res, response);
         });
     },
 
@@ -37,7 +34,22 @@ module.exports = {
             }
             cat.name = req.body.name;
 
-            saveCat(cat, res, 'Cat updated!');
+            cat.save((err) => {
+                const response = {message: 'Cat updated!'};
+                respond(err, res, response);
+            });
+        });
+    },
+
+    deleteCat(req, res) {
+        Cat.remove({
+            _id: req.params.cat_id
+        }, (err, cat) => {
+            if (err) {
+                res.send(err);
+            }
+            const response = { message: `Successfully deleted cat ${cat.id}` };
+            respond(err, res, response);
         });
     }
 };

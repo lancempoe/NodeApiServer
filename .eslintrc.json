@@ -1,5 +1,5 @@
 {
-    "extends": "google",
+    "extends": "eslint:recommended",
     "env": {
         "browser": false,
         "node": true,
@@ -9,6 +9,7 @@
         "max-len": [2, 120, 4], //120 chars long
         "no-var": 2, // require let or const instead of var
         "prefer-arrow-callback": 2,
-        "prefer-const": 2 // suggest using const declaration for variables that are never modified after declared
+        "prefer-const": 2, // suggest using const declaration for variables that are never modified after declared
+        "semi": ["error", "always"]
     }
 }

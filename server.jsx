@@ -4,6 +4,7 @@
  * Node looks here when starting the application to know how to configure the API
  */
 
+const winston = require('winston');
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./controllers/routes.jsx');
@@ -25,4 +26,5 @@ db.connect();
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log(`Server is now running on http://www.localhost:${port}/api/`);
+
+winston.log('INFO ', `Server is now running on http://www.localhost:${port}/api/`);
