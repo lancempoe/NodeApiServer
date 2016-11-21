@@ -33,3 +33,4 @@ app.use('/api', router);
 // START THE SERVER
 // =============================================================================
 app.listen(port);
+console.log(`Server is now running on http://www.{host}:${port}/api/`);
