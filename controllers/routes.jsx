@@ -1,6 +1,6 @@
 const express = require('express');
 const router = new express.Router();
-const catCtrl = require('./catController.jsx');
+const catCtrl = require('./cats.jsx');
 
 // ROUTES FOR OUR API
 router.route('/cats').get(catCtrl.getCats);

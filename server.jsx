@@ -6,7 +6,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const routes = require('./routes/routes.jsx');
+const routes = require('./controllers/routes.jsx');
+const db = require('./config/db.jsx');
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -17,6 +18,9 @@ app.use(bodyParser.json());
 
 // REGISTER ROUTES
 app.use('/api', routes);
+
+// CONNECT TO DB
+db.connect();
 
 // START THE SERVER
 // =============================================================================
