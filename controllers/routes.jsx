@@ -5,7 +5,7 @@ const catCtrl = require('./catsCtrl.jsx');
 
 // middleware to use for all requests
 router.use((req, res, next)  => {
-    winston.log('INFO', `Processing Request: ${req.method} on \"${req.path}\"`);
+    winston.info(`Processing Request: ${req.method} on \"${req.path}\"`);
     //At this point I could make sure that a user is authenticated.
     next(); // Go to the next routes and don't stop here
 });

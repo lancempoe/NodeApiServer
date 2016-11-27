@@ -27,4 +27,4 @@ db.connect();
 // =============================================================================
 app.listen(port);
 
-winston.log('INFO ', `Server is now running on http://www.localhost:${port}/api/`);
+winston.info(`Server is now running on http://www.localhost:${port}/api/`);
